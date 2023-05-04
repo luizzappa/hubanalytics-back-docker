@@ -4,6 +4,8 @@ Esse repositório contém o `backend` do primeiro MVP para a pós-graduação em
 
 Nesse projeto criei um catálogo de dashboards, por se tratar de um MVP o banco de dados utilizado é o `sqlite3`. As imagens são armazenadas localmente na pasta `imgs` e o banco apenas referencia o local em que elas serão servidas pelo `django`.
 
+Obs.: o `frontend` encontra-se [nesse repositório](https://github.com/luizzappa/hubanalytics-front).
+
 ## Como instalar
 
 Clone o repositório e instale localmente as bibliotecas utlizando o comando:

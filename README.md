@@ -20,7 +20,7 @@ Foram utilizados três componentes denominados A, B e C. Sendo que:
 
 **Componente C**: backend da aplicação desenvolvido em Django. É o código desse projeto.
 
-Os componentes A e C estão em containers docker. O componente B, por se tratar de uma API externa, é consumido pelo componente C (backend) em que é implementada uma rota que chama essa API externa passando a autenticação de forma segura e não expondo a API key para o frontend, retornando apenas o resultado da chamada a API externa.
+Os componentes A e C estão em containers docker. O componente B, por se tratar de uma API externa, é consumido pelo componente C (backend) em que é implementada uma rota que chama essa API externa passando a autenticação de forma segura e não expondo a API key para o frontend, retornando apenas o resultado da chamada a API externa. A rota que acessa essa API externa é a `extractkeywords`, onde se realiza um post no body com um json que possui uma key denominada `text` e o seu valor é o texto que se deseja extrair os termos chaves.
 
 ## Como instalar
 

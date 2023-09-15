@@ -1,7 +1,11 @@
-from rest_framework import generics, filters
+from rest_framework import generics, filters, viewsets, mixins
 from .models import Painel
-from .serializers import PainelSerializer
+from .serializers import PainelSerializer, ExtractKeywordsSerializer
 from django.http import JsonResponse
+from django.views import View
+import requests
+import json
+from django.conf import settings
 
 filters.OrderingFilter
 
@@ -83,3 +87,32 @@ class UniqueTags(generics.RetrieveAPIView):
         return JsonResponse(';'.join(tags), safe=False)
 
 
+class ExtractKeywords(viewsets.GenericViewSet, mixins.CreateModelMixin):
+
+    serializer_class = ExtractKeywordsSerializer
+
+    def post(self, request):
+
+        parsed_body = request.data['text']
+        
+        resp = requests.post(
+            'http://api.textrazor.com/',
+            headers={
+                'x-textrazor-key': settings.API_KEY
+            },
+            data={
+                "extractors": "entities,entailments",
+                "text": parsed_body
+            }
+        )
+
+        resp_json = json.loads(resp.content)
+        entities = resp_json['response'].get('entities')
+
+        if (not entities):
+            return JsonResponse({'found': False})
+        
+        return JsonResponse({
+            'found': True,
+            'tags': [entitie['entityEnglishId'] for entitie in entities]
+        })

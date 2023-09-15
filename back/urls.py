@@ -8,6 +8,7 @@ urlpatterns = [
     url(r'^paineis/$', views.PainelList.as_view(), name='painel-list'),
     path('painel/<int:id>', views.PainelEdit.as_view(), name='painel-edit'),
     path('uniquetags/', views.UniqueTags.as_view(), name='unique-tags'),
+    path('extractkeywords/', views.ExtractKeywords.as_view({'post': 'post'}), name='extract-keywords')
 ]
 
 # print(settings.MEDIA_URL, settings.MEDIA_ROOT, 'a')

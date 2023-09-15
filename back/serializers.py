@@ -3,7 +3,14 @@ from .models import Painel, Images
 import os
 
 
+class ExtractKeywordsSerializer(serializers.Serializer):
+
+    text = serializers.CharField()
+
+
 class PainelImageSerializer(serializers.ModelSerializer):
+
+
     class Meta:
         model = Images
         fields = ['image']

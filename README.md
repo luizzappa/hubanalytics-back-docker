@@ -12,7 +12,7 @@ Nesse projeto utilizo a componentização em que cada microserviço é uma compo
 
 Foram utilizados três componentes denominados A, B e C. Sendo que:
 
-![image](https://github.com/luizzappa/hubanalytics-back-docker/assets/65685842/74013905-98b5-44dd-8dec-25c5ac849a1a)
+![image](https://github.com/luizzappa/hubanalytics-back-docker/assets/65685842/a16d9b1d-03e1-4c77-9968-304515825173)
 
 **Componente A**: frontend da aplicação desenvolvido em react. O código está nesse [repositório](https://github.com/luizzappa/hubanalytics-front-docker)
 

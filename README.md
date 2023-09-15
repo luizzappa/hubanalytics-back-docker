@@ -12,6 +12,8 @@ Nesse projeto utilizo a componentização em que cada microserviço é uma compo
 
 Foram utilizados três componentes denominados A, B e C. Sendo que:
 
+![image](https://github.com/luizzappa/hubanalytics-back-docker/assets/65685842/74013905-98b5-44dd-8dec-25c5ac849a1a)
+
 **Componente A**: frontend da aplicação desenvolvido em react. O código está nesse [repositório](https://github.com/luizzappa/hubanalytics-front-docker)
 
 **Componente B**: API do [TextRazor](https://www.textrazor.com/) para extração de palavras-chaves de um texto. Esse serviço foi utilizado para que o usuário ao descrever o seu dashboard, possa gerar automaticamente `tags` com base na descrição.
